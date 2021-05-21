@@ -8,5 +8,5 @@ import { ProductsService } from "./products.service";
   providers: [ProductsService]
 })
 export class ProductsGridComponent {
-
+  constructor(public prodService: ProductsService){}
 }

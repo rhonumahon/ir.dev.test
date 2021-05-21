@@ -8,11 +8,11 @@ import { ProductsService } from "./products.service";
   providers: [ProductsService]
 })
 export class ProductsGridComponent {
+  public data: any;
   constructor(public prodService: ProductsService){}
   ngOnInit(): void {
     this.prodService.getProducts().subscribe(event =>{
-      console.log(event);
-    
+      this.data = event;
     });
   }
 }

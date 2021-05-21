@@ -10,10 +10,12 @@ import { ProductsService } from "./products.service";
 export class ProductsGridComponent {
   @Input() searchInput;
   public data: any;
+  public rows: any;
   constructor(public prodService: ProductsService){}
   ngOnInit(): void {
     this.prodService.getProducts().subscribe(event =>{
-      this.data = event;
+      this.rows = this.data = event;
     });
   }
+
 }

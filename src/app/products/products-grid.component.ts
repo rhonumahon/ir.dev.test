@@ -10,6 +10,9 @@ import { ProductsService } from "./products.service";
 export class ProductsGridComponent {
   constructor(public prodService: ProductsService){}
   ngOnInit(): void {
- 
+    this.prodService.getProducts().subscribe(event =>{
+      console.log(event);
+    
+    });
   }
 }

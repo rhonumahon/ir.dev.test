@@ -19,6 +19,7 @@ export class ProductsGridComponent {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      this.searchInput.length < 3 ? this.rows = this.data : setTimeout(()=>{this.rows = this.data.filter(res => res.name.match(this.searchInput) || res.description.match(this.searchInput) || res.brand.match(this.searchInput))}, 400); 
+    //SEARCH TASK
+     changes.searchInput && this.searchInput.length < 3 ? this.rows = this.data : setTimeout(()=>{this.rows = this.data.filter(res => res.name.match(this.searchInput) || res.description.match(this.searchInput) || res.brand.match(this.searchInput))}, 400); 
   }
 }

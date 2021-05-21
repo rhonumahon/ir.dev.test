@@ -20,6 +20,26 @@
         Description
       </th>
     </tr>
+    <tr *ngFor="let a of data">
+      <td>
+        {{a.id}}
+      </td>
+      <td>
+        {{a.name}}
+      </td>
+      <td>
+        {{a.brand}}
+      </td>
+      <td>
+        {{a.price}}
+      </td>
+      <td>
+        {{a.quantity}}
+      </td>
+      <td>
+        {{a.description}}
+      </td>
+    </tr>
   </thead>
   <tbody>
 

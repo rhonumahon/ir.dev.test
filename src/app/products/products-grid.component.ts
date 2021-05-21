@@ -9,4 +9,7 @@ import { ProductsService } from "./products.service";
 })
 export class ProductsGridComponent {
   constructor(public prodService: ProductsService){}
+  ngOnInit(): void {
+ 
+  }
 }

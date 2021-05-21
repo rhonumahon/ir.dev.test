@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input, SimpleChanges } from "@angular/core";
 import { ProductsService } from "./products.service";
 
 @Component({
@@ -8,6 +8,7 @@ import { ProductsService } from "./products.service";
   providers: [ProductsService]
 })
 export class ProductsGridComponent {
+  @Input() searchInput;
   public data: any;
   constructor(public prodService: ProductsService){}
   ngOnInit(): void {

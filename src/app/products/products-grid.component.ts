@@ -22,7 +22,6 @@ export class ProductsGridComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     //SEARCH TASK
-    this.rows = this.data.filter(item => item.brand.match(this.selected) && (this.radio == "all" ? item.quantity >= 0 : this.radio == "in-stock" ? item.quantity > 0 : this.radio == "out-of-stock" ? item.quantity == 0 : item.quantity  ) && (item.name.match(this.searchInput) || item.description.match(this.searchInput) || item.brand.match(this.searchInput)));
-
+    if(this.data)this.rows = this.data.filter(item => item.brand.match(this.selected) && (this.radio == "all" ? item.quantity >= 0 : this.radio == "in-stock" ? item.quantity > 0 : this.radio == "out-of-stock" ? item.quantity == 0 : item.quantity  ) && (item.name.match(this.searchInput) || item.description.match(this.searchInput) || item.brand.match(this.searchInput)));
   }
 }

@@ -13,6 +13,7 @@ export class AppComponent {
   searchInput: string;
   dropdown: any;
   selected: any;
+  radio: any;
 
   constructor(private prodService: ProductsService){
     this.prodService.getProducts().subscribe(event => {

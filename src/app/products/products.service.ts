@@ -80,4 +80,4 @@ export class ProductsService {
 }
 
 const getProduct = of("product1");
-const getQuantity = of(2, 8);
+const getQuantity = of(8, 8);

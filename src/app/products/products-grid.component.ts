@@ -9,6 +9,7 @@ import { ProductsService } from "./products.service";
 })
 export class ProductsGridComponent {
   @Input() searchInput;
+  @Input() selected;
   public data: any;
   public rows: any;
   constructor(public prodService: ProductsService){}
@@ -20,6 +21,7 @@ export class ProductsGridComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     //SEARCH TASK
-     changes.searchInput && this.searchInput.length < 3 ? this.rows = this.data : setTimeout(()=>{this.rows = this.data.filter(res => res.name.match(this.searchInput) || res.description.match(this.searchInput) || res.brand.match(this.searchInput))}, 400); 
+    this.rows = this.data.filter(item => item.brand.match(this.selected) && (item.name.match(this.searchInput) || item.description.match(this.searchInput) || item.brand.match(this.searchInput)));
+
   }
 }

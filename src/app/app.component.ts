@@ -9,6 +9,7 @@ import { ProductsService } from "./products/products.service";
 })
 export class AppComponent {
   title = "ir-dev-test";
+  inputs: string;
   searchInput: string;
   dropdown: any;
   selected: any;
@@ -19,5 +20,11 @@ export class AppComponent {
       this.dropdown = [...new Set(values)];
       
     })
+  }
+	
+  search(){
+    setTimeout(()=>{
+      this.inputs.length >= 3 ? this.searchInput = this.inputs : this.searchInput = ""; //- The search should not fire unless a minimum of three characters have been typed. 
+    },400) //- The search should only fire a maximum of once per 400 milliseconds.
   }
 }

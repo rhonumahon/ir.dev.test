@@ -114,7 +114,7 @@
   <div class="container">
     <div class="filter">
       <label for="search">Search</label>
-      <input id="search"/>
+      <input id="search" [(ngModel)]="inputs" (input)="search()"/>
     </div>
     <div class="filter">
       <label for="brands">Brands</label>
@@ -132,6 +132,6 @@
     </div>
   </div>
   <div class="container">
-    <products-table [searchInput]="searchInput"></products-table>
+    <products-table [searchInput]="searchInput" [selected]="selected"></products-table>
   </div>
 </div>

@@ -114,11 +114,13 @@
   <div class="container">
     <div class="filter">
       <label for="search">Search</label>
-      <input id="search" [(ngModel)]="searchInput"/>
+      <input id="search"/>
     </div>
     <div class="filter">
       <label for="brands">Brands</label>
-      <select id="brands"> </select>
+      <select id="brands" [(ngModel)]="selected">
+        <option *ngFor="let d of dropdown" [ngValue]="d">{{d}}</option>
+      </select>
     </div>
     <div class="filter">
       <label for="in-stock">All</label>

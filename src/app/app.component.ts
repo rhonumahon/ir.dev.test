@@ -11,6 +11,7 @@ export class AppComponent {
   title = "ir-dev-test";
   searchInput: string;
   dropdown: any;
+  selected: any;
 
   constructor(private prodService: ProductsService){
     this.prodService.getProducts().subscribe(event => {
